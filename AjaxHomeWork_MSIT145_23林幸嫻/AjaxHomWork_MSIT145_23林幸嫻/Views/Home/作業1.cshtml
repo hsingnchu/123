@@ -1,0 +1,92 @@
+﻿@*
+    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
+*@
+@section Styles{
+    <style>
+
+
+          section{
+             width:100%;
+             border: 1px solid black;
+             border-radius: 5px
+         }
+
+         h5{margin:6px; font-weight:600;}
+         h6{margin:6px; color: gray}
+         p{margin:6px;}
+         .a1{margin:6px;
+             padding: 3px;
+             background-color: blue;
+             color: white ;
+             border-radius: 2px}
+
+
+
+        span{
+            font-size :36px;
+        }
+
+    </style>
+}
+
+    <div style="height: 35px ; border: none"></div>
+    <div style="border: none ; text-align: center;">
+        <span>桃園觀光景點</span>
+</div>
+<div>
+ @*想做關鍵字爬文但沒成功
+    <form onsubmit="search(); return false;">
+  <label for="search">關鍵字查詢:</label><br>
+  <input type="text" id="search" name="search">
+</form> 
+*@    
+</div>
+<br>
+<div id="sec"  style="border: none  ; width:100%;">
+</div>
+
+
+@section Scripts{
+    <script src=" /js/travel.js"></script>
+    <script>
+        const theSec= document.querySelector('#sec');
+        let datas = DATAS.map((tourist, Index, Array) => {
+            const { InfoId, TYWebsite, Website, Name, Toldescribe, Add,
+                        Zipcode, Opentime, Px, Py,  Parkinginfo,
+                        Ticketinfo, Remarks, Tel, Fax, Changetime }= tourist;
+            let s = "<section >" +
+                "<h5 >" + Name + "</h5>" +
+                "<h6 >地址 : " + Add + "</h6>" +
+                "<p>" + Toldescribe + "</p>"+
+                "<p>營業時間 : " + Opentime + "</p>" +
+                "<p>電話 : " + Tel + "&nbsp;" + "傳真" + Fax + "</p>" +
+
+                "<p>停車資訊 : " + Parkinginfo + "</p>" 
+                + "<a class="+"'"+"a1"+"'"+"  href=" + "'" + Website + "'"+ ">官網</a>"
+                + "<a class=" + "'" + "a1" + "'" + "  href=" + "'" + TYWebsite + "'" + ">桃園指引</a>" + "</section >";
+
+            return s;
+        
+        })
+
+        theSec.innerHTML = datas.join(" ");
+
+    </script>
+
+@*想做關鍵字爬文但沒成功
+    <script>
+        function search() {
+            var keyword = document.getElementById("search").value;
+            var headers = document.getElementsByTagName("h5");
+            for (var i = 0; i < headers.length; i++) {
+                var header = headers[i];
+                if (header.innerHTML.indexOf(keyword) > -1) {
+                    window.location.hash = header.id;
+                    break;
+                }
+            }
+        }</script>
+*@
+}
+
+

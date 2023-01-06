@@ -1,0 +1,23 @@
+{
+  "runtimeTarget": {
+    "name": ".NETCoreApp,Version=v6.0",
+    "signature": ""
+  },
+  "compilationOptions": {},
+  "targets": {
+    ".NETCoreApp,Version=v6.0": {
+      "AjaxHomWork_MSIT145_23林幸嫻/1.0.0": {
+        "runtime": {
+          "AjaxHomWork_MSIT145_23林幸嫻.dll": {}
+        }
+      }
+    }
+  },
+  "libraries": {
+    "AjaxHomWork_MSIT145_23林幸嫻/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    }
+  }
+}
