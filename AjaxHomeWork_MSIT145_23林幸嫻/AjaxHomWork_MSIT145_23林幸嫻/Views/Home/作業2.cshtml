@@ -5,45 +5,55 @@
 @section Styles{
     <style>
         h2{
-        text-align: center;
-        margin:24px;
+            margin:24px;
         }
-
-        form{
-            text-align: center;
+        div{
+        display: flex;
+        justify-content: center;
+        align-items: center;
         }
-
-        .divbtn{
-            display: flex;
-            justify-content: center;
-            align-items: center;         }
-
     </style>
 }
-<h2>會員註冊</h2>
-<form>
-        <label>註 冊 名 稱&nbsp;  : </label>
-        <input type="text" name="txtname" placeholder="請輸入名稱">
-        <label id="lblname"></label>
 
+    <h2>會員註冊</h2>
+    <hr >
+
+<div>
         <br><br>
-        <label>註冊E-mail : </label>
-        <input type="text" name="txtkemail" placeholder="請輸入E-mail">
-        <label id="lblemail"></label>
-
-
-</form>
-<hr>
-<div class=divbtn>
-        <button >Demo-無重複</button> &nbsp;
-        <button>Demo-重複1</button>&nbsp;
-        <button>Demo-重複2</button>
-
+        <label>請輸入名稱: &nbsp;</label><input type="text" id="text1" />&nbsp;
+        <button class="btn btn-primary" id="button1">確認</button><br>
 </div>
+<div>
+        <label id="div1" ></label>
+</div>
+
+
+
+@*    @foreach (var name in Model)
+    {
+    <span id="span">@name.Name </span>
+    }
+*@
 
 @section Scripts{
     <script>
-        
+        const btn = document.querySelector('#button1');
+        const theDiv = document.querySelector('#div1');
+        const txt = document.querySelector('#text1');
+        const xhr = new XMLHttpRequest();
+
+
+        xhr.addEventListener('load', () => {
+            const data = xhr.responseText;
+            theDiv.innerHTML += `<h2>${data}</h2>`
+        })
+
+
+        btn.addEventListener('click', () => {
+            xhr.open("GET", `/api/index?name=${txt.value}`);
+            xhr.send();
+        })
+
 
     </script>
 }
