@@ -1,0 +1,15 @@
+﻿@model  IEnumerable<AjaxHomWork_MSIT145_23林幸嫻.Models.Member>
+@{
+    ViewData["Title"] = "測試Demo";
+}
+
+<h1>測試Demo</h1>
+
+<ul>
+    @foreach (var name in Model)
+    {
+        <li>@name.Name</li>
+    }
+</ul>
+
+
