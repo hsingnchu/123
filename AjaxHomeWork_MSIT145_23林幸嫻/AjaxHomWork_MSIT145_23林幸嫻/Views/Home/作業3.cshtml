@@ -1,0 +1,104 @@
+﻿
+@{
+    ViewData["Title"] = "作業3";
+}
+@section Styles{
+    <style>
+        .div1{
+            justify-content:center;
+            align-items:center;
+            align-text:center;
+        }
+
+        h2{
+            margin:24px;
+        }
+
+    </style>
+}
+<div id="div1">
+        <h2>台灣縣市鄉鎮區查詢</h2>
+        <hr>
+        <div>選單10秒內載入，請稍後.......</div><br><br>
+        <select id="select1"></select>
+        <select id="select2"></select>
+        <select id="select3"></select>
+
+
+</div>
+<section></section>
+
+@section Scripts{
+    <script>
+        const selCity = document.querySelector('#select1');
+        const selSite = document.querySelector('#select2');
+        const selRoad = document.querySelector('#select3');
+
+        async function asyncFunc1(){
+            try{
+                    const response =await fetch("@Url.Content("~/api/city")");
+                    const cities = await response.text();
+                    const citiess = JSON.parse(cities);
+                    const cityOpts = citiess.map(value => `<option value=${value}>${value}</option>`)
+                    selCity.innerHTML = cityOpts.join("");
+                    console.log(selCity);
+
+                    const city = selCity.options[selCity.selectedIndex].value;
+                    const response2 = await fetch(`@Url.Content("~/api/site?city=${city}")`);
+                    const sites = await response2.text();
+                    const sitess = JSON.parse(sites);
+                    const siteOpts = sitess.map(value => `<option value=${value}>${value}</option>`);
+                    selSite.innerHTML = siteOpts.join("");
+
+                    const site = selSite.options[selSite.selectedIndex].value;
+                    const response3 = await fetch(`@Url.Content("~/api/road?site=${site}")`);
+                    const roads = await response3.text();
+                    const roadss = JSON.parse(roads);
+                    const roadOpts = roadss.map(value => `<option value=${value}>${value}</option>`);
+                    selRoad.innerHTML = roadOpts.join("");
+
+            }catch(error){
+                return "請連繫MSIT145-23";
+            }        
+        }
+
+        async function asyncFunc2() {
+            try {
+                const city = selCity.options[selCity.selectedIndex].value;
+                const response2 = await fetch(`@Url.Content("~/api/site?city=${city}")`);
+                const sites = await response2.text();
+                const sitess = JSON.parse(sites);
+                const siteOpts = sitess.map(value => `<option value=${value}>${value}</option>`);
+                selSite.innerHTML = siteOpts.join("");
+
+            } catch (error) {
+                return "請連繫MSIT145-23";
+            }
+        }
+
+        async function asyncFunc3() {
+            try {
+                const site = selSite.options[selSite.selectedIndex].value;
+                const response3 = await fetch(`@Url.Content("~/api/road?site=${site}")`);
+                const roads = await response3.text();
+                const roadss = JSON.parse(roads);
+                const roadOpts = roadss.map(value => `<option value=${value}>${value}</option>`);
+                selRoad.innerHTML = roadOpts.join("");
+
+            } catch (error) {
+                return "請連繫MSIT145-23";
+            }
+        }
+
+
+        window.onload = function () {
+            asyncFunc1();
+
+        }
+        selCity.addEventListener('change', () => { asyncFunc2(); });
+        selSite.addEventListener('change', () => { asyncFunc3(); });
+
+    </script>
+}
+
+

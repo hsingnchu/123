@@ -1,11 +1,12 @@
 ﻿using AjaxHomWork_MSIT145_23林幸嫻.Models;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.EntityFrameworkCore;
 using System;
 using System.Text;
 
 namespace AjaxHomWork_MSIT145_23林幸嫻.Controllers
 {
-
+    //--------------for 作業2--------------
     public class apiController : Controller
     {
         public IActionResult Index(string name)
@@ -26,6 +27,40 @@ namespace AjaxHomWork_MSIT145_23林幸嫻.Controllers
 
             return Content($"{name}可申請!", "text/plain", Encoding.UTF8);
         }
+
+
+        //--------------for 作業3--------------
+
+
+
+        private readonly DemoContext _context;
+        private readonly IWebHostEnvironment _host;
+
+        public IActionResult City()
+        {
+            var cities = _context.Addresses.Select(a => a.City).Distinct();
+            return Json(cities);
+        }
+
+        public apiController(DemoContext context, IWebHostEnvironment host) 
+        {
+            _context = context;
+            _host = host;
+        }
+
+
+        public IActionResult Site(string city)
+        {
+            var sites = _context.Addresses.Where(s => s.City == city).Select(s => s.SiteId).Distinct();
+            return Json(sites);
+        }
+
+        public IActionResult Road(string site)
+        {
+            var roads = _context.Addresses.Where(r => r.SiteId == site).Select(s => s.Road).Distinct();
+            return Json(roads);
+        }
+
 
     }
 }

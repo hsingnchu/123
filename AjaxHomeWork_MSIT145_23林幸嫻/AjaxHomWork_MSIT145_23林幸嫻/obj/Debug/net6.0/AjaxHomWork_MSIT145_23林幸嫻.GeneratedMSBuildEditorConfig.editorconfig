@@ -5,57 +5,60 @@ build_property.UsingMicrosoftNETSdkWeb = true
 build_property.ProjectTypeGuids = 
 build_property.InvariantGlobalization = 
 build_property.PlatformNeutralAssembly = 
-build_property.EnforceExtendedAnalyzerRules = 
 build_property._SupportedPlatformList = Linux,macOS,Windows
 build_property.RootNamespace = AjaxHomWork_MSIT145_23林幸嫻
 build_property.RootNamespace = AjaxHomWork_MSIT145_23林幸嫻
-build_property.ProjectDir = C:\Users\Student\Documents\GitHub\Ajax_HW\AjaxHomeWork_MSIT145_23林幸嫻\AjaxHomWork_MSIT145_23林幸嫻\
+build_property.ProjectDir = C:\Users\hsing\OneDrive\文件\GitHub\MSIT45Site\123\AjaxHomeWork_MSIT145_23林幸嫻\AjaxHomWork_MSIT145_23林幸嫻\
 build_property.RazorLangVersion = 6.0
 build_property.SupportLocalizedComponentNames = 
 build_property.GenerateRazorMetadataSourceChecksumAttributes = 
-build_property.MSBuildProjectDirectory = C:\Users\Student\Documents\GitHub\Ajax_HW\AjaxHomeWork_MSIT145_23林幸嫻\AjaxHomWork_MSIT145_23林幸嫻
+build_property.MSBuildProjectDirectory = C:\Users\hsing\OneDrive\文件\GitHub\MSIT45Site\123\AjaxHomeWork_MSIT145_23林幸嫻\AjaxHomWork_MSIT145_23林幸嫻
 build_property._RazorSourceGeneratorDebug = 
 
-[C:/Users/Student/Documents/GitHub/Ajax_HW/AjaxHomeWork_MSIT145_23林幸嫻/AjaxHomWork_MSIT145_23林幸嫻/Views/Home/Index.cshtml]
+[C:/Users/hsing/OneDrive/文件/GitHub/MSIT45Site/123/AjaxHomeWork_MSIT145_23林幸嫻/AjaxHomWork_MSIT145_23林幸嫻/Views/Home/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxJbmRleC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Student/Documents/GitHub/Ajax_HW/AjaxHomeWork_MSIT145_23林幸嫻/AjaxHomWork_MSIT145_23林幸嫻/Views/Home/Privacy.cshtml]
+[C:/Users/hsing/OneDrive/文件/GitHub/MSIT45Site/123/AjaxHomeWork_MSIT145_23林幸嫻/AjaxHomWork_MSIT145_23林幸嫻/Views/Home/Privacy.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxQcml2YWN5LmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Student/Documents/GitHub/Ajax_HW/AjaxHomeWork_MSIT145_23林幸嫻/AjaxHomWork_MSIT145_23林幸嫻/Views/Home/作業1.cshtml]
+[C:/Users/hsing/OneDrive/文件/GitHub/MSIT45Site/123/AjaxHomeWork_MSIT145_23林幸嫻/AjaxHomWork_MSIT145_23林幸嫻/Views/Home/作業1.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVzkvZzmpa0xLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Student/Documents/GitHub/Ajax_HW/AjaxHomeWork_MSIT145_23林幸嫻/AjaxHomWork_MSIT145_23林幸嫻/Views/Home/作業2.cshtml]
+[C:/Users/hsing/OneDrive/文件/GitHub/MSIT45Site/123/AjaxHomeWork_MSIT145_23林幸嫻/AjaxHomWork_MSIT145_23林幸嫻/Views/Home/作業2.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVzkvZzmpa0yLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Student/Documents/GitHub/Ajax_HW/AjaxHomeWork_MSIT145_23林幸嫻/AjaxHomWork_MSIT145_23林幸嫻/Views/Home/桃園觀光景點.cshtml]
+[C:/Users/hsing/OneDrive/文件/GitHub/MSIT45Site/123/AjaxHomeWork_MSIT145_23林幸嫻/AjaxHomWork_MSIT145_23林幸嫻/Views/Home/作業3.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVzkvZzmpa0zLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/hsing/OneDrive/文件/GitHub/MSIT45Site/123/AjaxHomeWork_MSIT145_23林幸嫻/AjaxHomWork_MSIT145_23林幸嫻/Views/Home/桃園觀光景點.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVzmoYPlnJLop4DlhYnmma/pu54uY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Student/Documents/GitHub/Ajax_HW/AjaxHomeWork_MSIT145_23林幸嫻/AjaxHomWork_MSIT145_23林幸嫻/Views/Home/測試Demo.cshtml]
+[C:/Users/hsing/OneDrive/文件/GitHub/MSIT45Site/123/AjaxHomeWork_MSIT145_23林幸嫻/AjaxHomWork_MSIT145_23林幸嫻/Views/Home/測試Demo.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVzmuKzoqaZEZW1vLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Student/Documents/GitHub/Ajax_HW/AjaxHomeWork_MSIT145_23林幸嫻/AjaxHomWork_MSIT145_23林幸嫻/Views/Shared/Error.cshtml]
+[C:/Users/hsing/OneDrive/文件/GitHub/MSIT45Site/123/AjaxHomeWork_MSIT145_23林幸嫻/AjaxHomWork_MSIT145_23林幸嫻/Views/Shared/Error.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXEVycm9yLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Student/Documents/GitHub/Ajax_HW/AjaxHomeWork_MSIT145_23林幸嫻/AjaxHomWork_MSIT145_23林幸嫻/Views/Shared/_ValidationScriptsPartial.cshtml]
+[C:/Users/hsing/OneDrive/文件/GitHub/MSIT45Site/123/AjaxHomeWork_MSIT145_23林幸嫻/AjaxHomWork_MSIT145_23林幸嫻/Views/Shared/_ValidationScriptsPartial.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9WYWxpZGF0aW9uU2NyaXB0c1BhcnRpYWwuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Student/Documents/GitHub/Ajax_HW/AjaxHomeWork_MSIT145_23林幸嫻/AjaxHomWork_MSIT145_23林幸嫻/Views/_ViewImports.cshtml]
+[C:/Users/hsing/OneDrive/文件/GitHub/MSIT45Site/123/AjaxHomeWork_MSIT145_23林幸嫻/AjaxHomWork_MSIT145_23林幸嫻/Views/_ViewImports.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcX1ZpZXdJbXBvcnRzLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Student/Documents/GitHub/Ajax_HW/AjaxHomeWork_MSIT145_23林幸嫻/AjaxHomWork_MSIT145_23林幸嫻/Views/_ViewStart.cshtml]
+[C:/Users/hsing/OneDrive/文件/GitHub/MSIT45Site/123/AjaxHomeWork_MSIT145_23林幸嫻/AjaxHomWork_MSIT145_23林幸嫻/Views/_ViewStart.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcX1ZpZXdTdGFydC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Student/Documents/GitHub/Ajax_HW/AjaxHomeWork_MSIT145_23林幸嫻/AjaxHomWork_MSIT145_23林幸嫻/Views/Shared/_Layout.cshtml]
+[C:/Users/hsing/OneDrive/文件/GitHub/MSIT45Site/123/AjaxHomeWork_MSIT145_23林幸嫻/AjaxHomWork_MSIT145_23林幸嫻/Views/Shared/_Layout.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9MYXlvdXQuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = b-k54w6arqzg

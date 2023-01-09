@@ -33,6 +33,11 @@ namespace AjaxHomWork_MSIT145_23林幸嫻.Controllers
             return View();
         }
 
+        public IActionResult 作業3()
+        {
+            return View();
+        }
+
 
 
 

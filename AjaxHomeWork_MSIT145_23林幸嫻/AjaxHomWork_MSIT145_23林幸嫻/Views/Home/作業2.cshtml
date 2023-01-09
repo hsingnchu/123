@@ -2,6 +2,23 @@
 @{
     ViewData["Title"] = "作業2";
 }
+@section Styles{
+    <style>
+     h2{
+           margin: 24px 0 24px 0;
+          }
+    label{
+              font-size:16px;
+               margin:12px 0 12px 0;
+              }
+     #div1{
+                  font-size:16px;
+                  background-color: yellow;
+                }
+
+
+    </style>
+}
 
     <h2>會員註冊</h2>
     <hr >
@@ -14,7 +31,7 @@
     <button type="submit" id="button1" class="btn btn-primary" style="margin:12px">驗證</button>
 
 <div id="div1">
-</div>
+</div> 
 
 
 
@@ -28,7 +45,7 @@
          xhr.addEventListener('load', () => {
             theDiv.innerHTML = "";
             const data = xhr.responseText;
-            theDiv.innerHTML += `<h5>${data}</h5>`
+            theDiv.innerHTML += `&nbsp;&nbsp;${data}`
         })
 
 
