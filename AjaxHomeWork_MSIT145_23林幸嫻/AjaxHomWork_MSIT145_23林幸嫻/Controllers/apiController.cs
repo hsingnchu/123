@@ -16,7 +16,7 @@ namespace AjaxHomWork_MSIT145_23林幸嫻.Controllers
             string namess = "Jack Mary Nancy Tom Eric";
             if (string.IsNullOrEmpty(name))
             {
-                return Content($"請輸入名稱", "text/plain", Encoding.UTF8);
+                return Content($"未輸入名稱", "text/plain", Encoding.UTF8);
             }
 
             else if (namess.Contains(name))

@@ -2,38 +2,21 @@
 @{
     ViewData["Title"] = "作業2";
 }
-@section Styles{
-    <style>
-        h2{
-            margin:24px;
-        }
-        div{
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        }
-    </style>
-}
 
     <h2>會員註冊</h2>
     <hr >
 
-<div>
-        <br><br>
-        <label>請輸入名稱: &nbsp;</label><input type="text" id="text1" />&nbsp;
-        <button class="btn btn-primary" id="button1">確認</button><br>
+
+    <div class="form-group mx-sm-3 mb-2">
+        <label for="" class="sr-only">請輸入名稱 : </label>
+        <input type="text" class="form-control" id="text1" placeholder="請輸入名稱">
+    </div>
+    <button type="submit" id="button1" class="btn btn-primary" style="margin:12px">驗證</button>
+
+<div id="div1">
 </div>
-<div>
-        <label id="div1" ></label>
-</div>
 
 
-
-@*    @foreach (var name in Model)
-    {
-    <span id="span">@name.Name </span>
-    }
-*@
 
 @section Scripts{
     <script>
@@ -42,14 +25,16 @@
         const txt = document.querySelector('#text1');
         const xhr = new XMLHttpRequest();
 
-
-        xhr.addEventListener('load', () => {
+         xhr.addEventListener('load', () => {
+            theDiv.innerHTML = "";
             const data = xhr.responseText;
-            theDiv.innerHTML += `<h2>${data}</h2>`
+            theDiv.innerHTML += `<h5>${data}</h5>`
         })
 
 
+
         btn.addEventListener('click', () => {
+
             xhr.open("GET", `/api/index?name=${txt.value}`);
             xhr.send();
         })
