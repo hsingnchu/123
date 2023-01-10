@@ -1,0 +1,109 @@
+﻿
+@{
+    ViewData["Title"] = "作業4";
+}
+@section Styles{
+    <style>
+        h2 {
+            margin: 24px;
+        }
+
+    </style>
+}
+
+
+<h2>會員註冊</h2>
+    <hr>
+
+
+<form method="post" name="userForm" class="w-50">
+    <div class="mb-3">
+        <label for="name" class="form-label">姓名</label>
+        <input type="text" class="form-control" id="name" name="name"> <label id="lblname"></label>
+
+    </div>
+    <div class="mb-3">
+        <label for="email" class="form-label">電子郵件</label>
+            <input type="email" class="form-control" id="email" name="email"><label id="lblemail"></label>
+
+    </div>
+    <div class="mb-3">
+        <label for="age" class="form-label">年紀</label>
+            <input type="text" class="form-control" id="age" name="age"><label id="lblage"></label>
+    </div>
+    <div class="mb-3">
+        <label for="formFile" class="form-label">照片</label>
+        <input class="form-control" type="file" id="formFile" name="photo">
+    </div>
+    <div class="mb-3">
+        <button type="submit" class="btn btn-primary mb-3">送出</button>
+    </div>
+
+</form>
+<div id="div1"></div>
+
+@section Scripts{
+    <script>
+        const btn = document.querySelector('button[type="submit"]');
+        const txt1= document.querySelector('#name');
+        const txt2 = document.querySelector('#email');
+        const txt3 = document.querySelector('#age');
+
+        txt1.addEventListener('blur', async () => {
+            //console.log(txt1.value);
+            const response = await fetch(`@Url.Content("~/api/checkaccount?name=${txt1.value}")`);
+            const data = await response.text();
+            //console.log(data);
+            if (txt1.value == "" || txt1.value == null || txt1.value == undefined) {
+                $('#lblname').html("<font color=red > X 錯誤 : 姓名不可空白 ");
+            }
+            else if(data == "True"){
+                $('#lblname').html("<font color=red > X 錯誤 : 姓名重複申請 ");
+            }
+            else {
+                $('#lblname').html("<font color=green > O 完成 : 姓名可申請");
+            }
+            })
+
+        txt2.addEventListener('blur', async () => {
+            const response = await fetch(`@Url.Content("~/api/CheckEmail?email=${txt2.value}")`);
+            const data = await response.text();
+            //console.log(data);
+            if (txt2.value == "" || txt2.value == null || txt2.value == undefined) {
+                $('#lblemail').html("<font color=red > X 錯誤 : email不可空白 ");
+            }
+            else if (data == "True") {
+                $('#lblemail').html("<font color=red > X 錯誤 : email重複申請 ");
+            }
+            else {
+                $('#lblemail').html("<font color=green > O 完成 : email可申請");
+            }
+        })
+
+        txt3.addEventListener('blur', function(){
+            if (txt3.value < 1 && txt3.value > 200)
+                $('#lblage').html("<font color=red > X 錯誤 : 請輸入合理年齡 ");
+            else if(txt3.value >1 && txt3.value <200)
+                $('#lblage').html("<font color=green > O 完成 : 年齡已填寫");
+            else{
+                $('#lblage').html("<font color=red > X 錯誤 : 請輸入合理年齡 ");
+
+            }
+
+        })
+
+
+        btn.addEventListener("click", async (event) => {
+            event.preventDefault(); 
+            const formData = new FormData(document.userForm);
+            const response = await fetch("@Url.Content("/api/register")", {
+                method: "POST",
+                body: formData
+            });
+            const data = await response.text();
+            document.querySelector('#div1').innerHTML = data;
+        })
+
+    </script>
+
+}

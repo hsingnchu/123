@@ -9,6 +9,8 @@ namespace AjaxHomWork_MSIT145_23林幸嫻.Controllers
     //--------------for 作業2--------------
     public class apiController : Controller
     {
+
+
         public IActionResult Index(string name)
         {
             //DemoContext context = new DemoContext();
@@ -61,6 +63,44 @@ namespace AjaxHomWork_MSIT145_23林幸嫻.Controllers
             return Json(roads);
         }
 
+        public IActionResult CheckAccount(string name)
+        {
+            var exists = _context.Members.Any(m => m.Name == name);
+
+            return Content(exists.ToString(), "text/palin");
+        }
+
+        public IActionResult CheckEmail(string email)
+        {
+            var exists = _context.Members.Any(m => m.Email == email);
+
+            return Content(exists.ToString(), "text/palin");
+        }
+
+        public IActionResult Register(Member member, IFormFile photo)
+        {
+            string fileName = photo.FileName;
+            string filePath = Path.Combine(_host.WebRootPath, "uploads", fileName);
+            using (var fileStream = new FileStream(filePath, FileMode.Create))
+            {
+                photo.CopyTo(fileStream);
+            }
+
+            member.FileName = fileName;
+            byte[]? imgByte = null;
+            using (var memoryStream = new MemoryStream())
+            {
+                photo.CopyTo(memoryStream);
+                imgByte = memoryStream.ToArray();
+            }
+            member.FileData = imgByte;
+
+            _context.Members.Add(member);
+            _context.SaveChanges();
+
+            return Content($"{filePath}");
+
+        }
 
     }
 }
