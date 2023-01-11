@@ -36,8 +36,10 @@
         <input class="form-control" type="file" id="formFile" name="photo">
     </div>
     <div class="mb-3">
-        <button type="submit" class="btn btn-primary mb-3">送出</button>
-    </div>
+        <button type="submit" class="btn btn-primary mb-3">送出</button> &nbsp;
+        <input type="button" class="btn btn-outline-primary mb-3" id="clear" value="繼續註冊" />
+@*        //<button type="button" class="btn btn-primary mb-3" id="">繼續註冊</button>
+*@    </div>
 
 </form>
 <div id="div1"></div>
@@ -45,9 +47,12 @@
 @section Scripts{
     <script>
         const btn = document.querySelector('button[type="submit"]');
+        const btnc = document.querySelector('#clear');
         const txt1= document.querySelector('#name');
         const txt2 = document.querySelector('#email');
         const txt3 = document.querySelector('#age');
+        const txt4 = document.querySelector('#formFile');
+
 
         txt1.addEventListener('blur', async () => {
             //console.log(txt1.value);
@@ -96,14 +101,25 @@
         btn.addEventListener("click", async (event) => {
             event.preventDefault(); 
             const formData = new FormData(document.userForm);
-            const response = await fetch("@Url.Content("/api/register")", {
+            const response = await fetch("@Url.Content("~/api/Register")", {
                 method: "POST",
                 body: formData
             });
-            const data = await response.text();
             document.querySelector('#div1').innerHTML = data;
-        })
+            alert("資料送出成功！請等待審核(約2個工作天)")
+             })
+
+          btnc.addEventListener("click",function(){
+                txt1.value="";
+                $('#lblname').html("");
+                txt2.value = "";
+                $('#lblemail').html("");
+                txt3.value = "";
+                $('#lblage').html("");
+                txt4.value = "";
+          })
+
 
     </script>
-
+     
 }

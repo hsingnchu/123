@@ -86,6 +86,7 @@ namespace AjaxHomWork_MSIT145_23林幸嫻.Controllers
                 photo.CopyTo(fileStream);
             }
 
+
             member.FileName = fileName;
             byte[]? imgByte = null;
             using (var memoryStream = new MemoryStream())
@@ -98,10 +99,10 @@ namespace AjaxHomWork_MSIT145_23林幸嫻.Controllers
             _context.Members.Add(member);
             _context.SaveChanges();
 
+
             return Content($"{filePath}");
 
         }
-
     }
 }
 

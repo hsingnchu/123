@@ -51,7 +51,8 @@ namespace AjaxHomWork_MSIT145_23林幸嫻.Models
 
             modelBuilder.Entity<Member>(entity =>
             {
-                entity.Property(e => e.MemberId).ValueGeneratedNever();
+                //entity.Property(e => e.MemberId).ValueGeneratedNever();
+                entity.HasKey(e => e.MemberId);
 
                 entity.Property(e => e.Email).HasMaxLength(200);
 
