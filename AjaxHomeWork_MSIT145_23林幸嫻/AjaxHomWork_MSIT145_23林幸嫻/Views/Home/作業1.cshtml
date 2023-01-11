@@ -34,15 +34,19 @@
         <span>桃園觀光景點</span>
 </div>
 <div>
- @*想做關鍵字爬文但沒成功
-    <form onsubmit="search(); return false;">
-  <label for="search">關鍵字查詢:</label><br>
-  <input type="text" id="search" name="search">
-</form> 
-*@    
+      </div>
+<div style="margin:2% 22% 2% 22% ;text-align: center">
+    <input type="text" id="txtsearch" placeholder="請輸入關鍵字" style="width:20% ;height:40px ; margin:auto"> &nbsp;
+    <input type="button" id="btns" class="btn btn-primary" value="查詢">&nbsp;
+    <input type="button" id="btnall" class="btn btn-success" value="回到清單">
+
+
+  </div>
+
+
 </div>
 <br>
-<div id="sec"  style="border: none  ; width:100%;">
+<div id="sec"  style="border: none  ; width:90%; justify-content:center; align-content:center; margin:auto">
 </div>
 
 
@@ -50,42 +54,50 @@
     <script src=" /js/travel.js"></script>
     <script>
         const theSec= document.querySelector('#sec');
+        const txt = document.querySelector('#txtsearch');
+        const btn= document.querySelector('#btns');
+        const btnall = document.querySelector('#btnall');
+
+
+        btnall.addEventListener('click', () => {
+        showDatas(DATAS);
+        })
+
+
+        btn.addEventListener('click', () => {
+            const results = DATAS.filter(data => data.Name.indexOf(txt.value) !== -1);
+            showDatas(results);
+        })
+
+        showDatas(DATAS);
+        function showDatas(DATAS) {
         let datas = DATAS.map((tourist, Index, Array) => {
             const { InfoId, TYWebsite, Website, Name, Toldescribe, Add,
                         Zipcode, Opentime, Px, Py,  Parkinginfo,
                         Ticketinfo, Remarks, Tel, Fax, Changetime }= tourist;
-            let s = "<section >" +
-                "<h5 >" + Name + "</h5>" +
-                "<h6 >地址 : " + Add + "</h6>" +
-                "<p>" + Toldescribe + "</p>"+
-                "<p>營業時間 : " + Opentime + "</p>" +
-                "<p>電話 : " + Tel + "&nbsp;&nbsp;" + "傳真 : " + Fax + "</p>" +
 
-                "<p>停車資訊 : " + Parkinginfo + "</p>" 
-                + "<a class="+"'"+"a1"+"'"+"  href=" + "'" + Website + "'"+ ">官網</a>"
-                + "<a class=" + "'" + "a1" + "'" + "  href=" + "'" + TYWebsite + "'" + ">桃園指引</a>" + "</section ><br/>";
+            return `  <div class="card">
+                          <h5 class="card-header">${Name}</h5>
+                          <div class="card-body">
+                          <h5 class="card-title">${Toldescribe}</h5>
+                                            <p class="card-text">地址 : ${Add}</p>
+                                            <p class="card-text">營業時間 : ${Opentime}</p>
+                                             <p class="card-text">電話 : ${Tel}</p>
+                                             <p class="card-text">傳真 : ${ Fax}</p>
+                                             <p class="card-text">停車資訊 : ${Parkinginfo}</p>
+                                    <a href="${Website}" class="btn btn-primary">官方網站</a>
+                                    <a href="${TYWebsite}" class="btn btn-primary">桃園指引</a>
 
-            return s;
-        
+                          </div>
+                          </div><br>  `            
+        ;
         })
 
         theSec.innerHTML = datas.join("");
-
+        }
     </script>
 
-@*想做關鍵字爬文但沒成功
-    <script>
-        function search() {
-            var keyword = document.getElementById("search").value;
-            var headers = document.getElementsByTagName("h5");
-            for (var i = 0; i < headers.length; i++) {
-                var header = headers[i];
-                if (header.innerHTML.indexOf(keyword) > -1) {
-                    window.location.hash = header.id;
-                    break;
-                }
-            }
-        }</script>
+@*想做關鍵字爬文但沒成功=>已解決，感謝老師講解!
 *@
 }
 
